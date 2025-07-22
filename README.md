@@ -4,7 +4,7 @@ No dependencies are required.
 
 ## Example
 ```
-import svgcanvas
+from svgcanvas import svgCanvas
 
 # Create a Canvas object for writing
 myCanvas = svgCanvas(400, 600)
@@ -31,5 +31,11 @@ myCanvas.save("coconut.svg")
 
 ## Installation
 From Source:  
-```foobar```
+1. Git Clone this repository:  
+```$ <foobar>```
+1. Change into this project directory:  
+```$ cd svgcanvas```
+1. Install package with pip:  
+```$ pip install .```
+
 
