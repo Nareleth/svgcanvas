@@ -24,3 +24,4 @@ def main():
 	# Write your canvas to a file
 	myCanvas.save("coconut.svg")
 
+main()

@@ -1,0 +1,1 @@
+from .svgcanvas import svgCanvas
