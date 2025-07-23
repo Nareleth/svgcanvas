@@ -34,10 +34,10 @@ class Shape:
 
 # Create an object for storing svg content
 class svgCanvas():
-	def __init__(self, width, height):
+	def __init__(self, height, width):
 		# Create an object for drawing svg shapes
-		self.width = width
 		self.height = height
+		self.width = width
 		# Array for storing svg items
 		self.shapes = []
 
