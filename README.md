@@ -1,36 +1,19 @@
 # svgcanvas
 A simple to use python library to generate SVG images files.  
-No dependencies are required.  
 
-## Usage
+## Quick Start
 ```
 from svgcanvas import svgCanvas
 
-# Create a Canvas object for writing
 myCanvas = svgCanvas(400, 600)
 
-# Create a shape object with required dimensions
 # Add style to your shape object
 
-circle1 = myCanvas.circle(50, 50, 10)
-circle1.style(stroke="black", strokeWidth=2, fill="red")
+circle = myCanvas.circle(50, 50, 10)
+circle.style(stroke="black", strokeWidth=2, fill="red")
 
-rect1 = myCanvas.rect(100, 200, 100, 200)
-rect1.style(stroke="blue", strokeWidth=3, fill="orange")	
-
-line1 = myCanvas.line(50, 0, 50, 600)
-line1.style(fill="green")
-
-ellipse1 = myCanvas.ellipse(300, 200, 100, 30)
-ellipse1.style(stroke="blue", fill="orange")
-
-
-# Write your canvas to a file
 myCanvas.save("coconut.svg")
 ```
-
-## Examples
-There are sample usage files in the *examples/* directory
 
 ## Installation
 From Source:  
@@ -42,3 +25,60 @@ From Source:
 ```$ pip install .```
 
 
+## Usage
+There are sample usage files in the *examples/* directory.  
+The samples show files that use the api to generate svg images, showcasing the flexibility of its usage.
+### Creating a Grid
+```
+
+```
+
+## API Reference
+### svgCanvas(height, width)  
+Creates a canvas object with specified dimensions.  
+#### Parameters:
+- ```height```(int): Canvas height in int pixels.
+- ```width```(int): Canvas width in int pixels.
+
+### Shapes
+#### canvas.line(x1, y1, x2, y2)
+Creates a line from (x1,y1) to (x2,y2).
+**Returns:** Line object with ```.style()``` method. Requires a **stroke** color to be displayed.
+
+#### canvas.rect(x,y, width, height)
+Creates a rectangle at position (x,y) with given width and height.  
+**Returns:** Rectangle object with ```.style()``` method.
+
+#### canvas.circle(cx,cy,r)
+Creates a circle centered at (cx,cy) with radius r.
+**Returns:** Circle object with ```.style()``` method.
+
+#### canvas.ellipse(cx,cy,rx,ry)
+Creates an ellipse centered at (cx,cy) with x-radius rx and r-radius ry.
+**Returns:** Ellipse object with ```.style()``` method.
+
+### Style
+All shape objects have a ```.style()``` method that access CSS properties:
+- ```fill```- Fill color(color name, hex, rgb)
+- ```stroke```- Stroke color (color, name, hex, rgb)
+- ```stroke_width```- Stroke thickness (pixels)
+- ```opacity```- Transparency (0.0 to 1.0)
+- ```stroke_dasharray```- Dash patterns for strokes
+- ```fill_opacity```- Fill transparency
+- ```stroke_opacity```- Stroke transparency
+
+### Save
+**canvas.save(filename)**  
+Writes xml formatted lines to an svg file.
+#### Parameters:
+- ```filename```(str): Output file path(should end with .svg)
+
+## Requirements
+- Python3.6+
+- There are no dependencies required to install or use this package..  
+
+## License
+No License.
+
+## Contributing
+Not accepting pull requests, but comments and feedback are welcome.
