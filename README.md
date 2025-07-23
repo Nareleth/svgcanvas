@@ -2,7 +2,7 @@
 A simple to use python library to generate SVG images files.  
 No dependencies are required.  
 
-## Example
+## Usage
 ```
 from svgcanvas import svgCanvas
 
@@ -29,10 +29,13 @@ ellipse1.style(stroke="blue", fill="orange")
 myCanvas.save("coconut.svg")
 ```
 
+## Examples
+There are sample usage files in the *examples/* directory
+
 ## Installation
 From Source:  
 1. Git Clone this repository:  
-```$ <foobar>```
+```$ git clone https://github.com/Nareleth/svgcanvas.git```
 1. Change into this project directory:  
 ```$ cd svgcanvas```
 1. Install package with pip:  
