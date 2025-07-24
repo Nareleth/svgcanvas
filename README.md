@@ -30,7 +30,22 @@ There are sample usage files in the *examples/* directory.
 The samples show files that use the api to generate svg images, showcasing the flexibility of its usage.
 ### Creating a Grid
 ```
+from svgcanvas import svgCanvas
 
+cHeight = 400
+cWidth = 600
+
+canvas = svgCanvas(cHeight, cWidth)
+
+cellSize = 100
+
+for x in range(0, cWidth, cellSize):
+    for y in range(0, cHeight, cellSize):
+        gridYIndex = canvas.line(0, f"{y}", cHeight, f"{y}")
+        gridYIndex.style(stroke="grey")
+
+    gridXIndex = canvas.line(f"{x}", 0, f"{x}", cWidth)
+    gridXIndex.style(stroke="grey")
 ```
 
 ## API Reference
