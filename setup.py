@@ -3,7 +3,7 @@
 from setuptools import setup, find_packages
 setup(
 	name="svgcanvas",
-	version="1.1",
+	version="1.1.2",
 	description="Python SVG File Writer",
 	author="blocka",
 	packages=find_packages(),
