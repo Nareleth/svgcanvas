@@ -30,7 +30,22 @@ There are sample usage files in the *examples/* directory.
 The samples show files that use the api to generate svg images, showcasing the flexibility of its usage.
 ### Creating a Grid
 ```
+from svgcanvas import svgCanvas
 
+cHeight = 400
+cWidth = 600
+
+canvas = svgCanvas(cHeight, cWidth)
+
+cellSize = 100
+
+for x in range(0, cWidth, cellSize):
+    for y in range(0, cHeight, cellSize):
+        gridYIndex = canvas.line(0, f"{y}", cHeight, f"{y}")
+        gridYIndex.style(stroke="grey")
+
+    gridXIndex = canvas.line(f"{x}", 0, f"{x}", cWidth)
+    gridXIndex.style(stroke="grey")
 ```
 
 ## API Reference
@@ -42,7 +57,7 @@ Creates a canvas object with specified dimensions.
 
 ### Shapes
 #### canvas.line(x1, y1, x2, y2)
-Creates a line from (x1,y1) to (x2,y2).
+Creates a line from (x1,y1) to (x2,y2).  
 **Returns:** Line object with ```.style()``` method. Requires a **stroke** color to be displayed.
 
 #### canvas.rect(x,y, width, height)
@@ -50,12 +65,22 @@ Creates a rectangle at position (x,y) with given width and height.
 **Returns:** Rectangle object with ```.style()``` method.
 
 #### canvas.circle(cx,cy,r)
-Creates a circle centered at (cx,cy) with radius r.
+Creates a circle centered at (cx,cy) with radius r.  
 **Returns:** Circle object with ```.style()``` method.
 
 #### canvas.ellipse(cx,cy,rx,ry)
-Creates an ellipse centered at (cx,cy) with x-radius rx and r-radius ry.
+Creates an ellipse centered at (cx,cy) with x-radius rx and r-radius ry.  
 **Returns:** Ellipse object with ```.style()``` method.
+
+
+#### canvas.path(d)
+Creates a curved line with specified pathing. Accepts one parameter, but the parameter has its own syntax.
+- ```M```- Move to X Y coordinate
+- ```L```- Line to X Y coordinate
+- ```C```- Curve to X Y coordinate
+- ```Z```- Close path
+**Returns:** Path object with ```.style()``` method.
+
 
 ### Style
 All shape objects have a ```.style()``` method that access CSS properties:
