@@ -77,11 +77,11 @@ class svgCanvas():
 		return ellipse
 
 
-    # Path := "M L C Z"
-    def path(self, d):
-        path = Shape("path", d=d)
-        self.shapes.append(path)
-        return path
+	# Path := "M L C Z"
+	def path(self, d):
+		path = Shape("path", d=d)
+		self.shapes.append(path)
+		return path
 
 
 	# Create XML content and write out file
